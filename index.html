@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿Vue的Mvvm简易实现</title>
+</head>
+<body>
+<div id="app">
+    <div><p>我的名字是：{{name}}，人在{{{address}}}}</p></div>
+    我的名字是：{{name}}，人在{{address}}
+    <p></p>
+    <label>
+        绑定了name的输入框：
+        <input v-model="name">
+    </label>
+    <p></p>
+    <label>
+        绑定了address的输入框：
+        <input v-model="address">
+    </label>
+</div>
+<script src="mvvm.js"></script>
+<script>
+    var vm = new Mvvm({
+        el: "#app",
+        data: {
+            address: '成都',
+            name: 'sens'
+        }
+    });
+
+    setTimeout(function () {
+        vm.name = 'Sens';
+    },3000);
+
+</script>
+</body>
+</html>
